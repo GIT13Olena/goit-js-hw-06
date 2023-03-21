@@ -26,12 +26,17 @@ const images = [
 ];
 
 const gallery = document.querySelector("ul.gallery");
-images.forEach((image) => {
-  const li = `
-    <li>
-      <img src=" ${image.url}" alt="${image.alt} ">
-    </li>
-  `;
+const fragment = document.createDocumentFragment();
 
-  gallery.insertAdjacentHTML("beforeend", li);
+images.forEach((image) => {
+  const li = document.createElement("li");
+  const img = document.createElement("img");
+
+  img.src = image.url;
+  img.alt = image.alt;
+
+  li.appendChild(img);
+  fragment.appendChild(li);
 });
+
+gallery.appendChild(fragment);

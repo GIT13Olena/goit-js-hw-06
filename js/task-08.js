@@ -41,5 +41,5 @@ formLog.addEventListener("submit", (event) => {
   };
 
   console.log(formData);
-  form.reset();
+  formLog.reset();
 });

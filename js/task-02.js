@@ -18,10 +18,13 @@ const ingredients = [
 ];
 
 const ingredientsLi = document.querySelector("ul#ingredients");
+const fragment = document.createDocumentFragment();
+
 ingredients.forEach((ingredient) => {
   const li = document.createElement("li");
   li.textContent = ingredient;
   li.classList.add("item");
-  ingredientsLi.appendChild(li);
-  console.log(ingredientsLi);
+  fragment.appendChild(li);
 });
+
+ingredientsLi.appendChild(fragment);
